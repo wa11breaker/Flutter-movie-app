@@ -1,0 +1,47 @@
+{
+    "Movies": [
+        {
+            "index": 0,
+            "name": "Avengers: Endgame",
+            "image": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
+            "duration": "3h 1min",
+            "category": ["Action","Adventure","Sci-Fi"],
+            "rating": "8.5"
+        },
+        {
+            "index": 1,
+            "name": "Avengers: Infinity War",
+            "image": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
+            "duration": "3h 1min",
+            "category": ["Action","Adventure","Sci-Fi"],
+            "rating": "8.5"
+        },
+        {
+            "index": 2,
+            "name": "Avengers: Infinity War",
+            "image": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
+            "duration": "3h 1min",
+            "category": ["Action","Adventure","Sci-Fi"],
+            "rating": "8.5"
+        }
+        
+    ],
+    "Featured": [
+        {
+            "index": 0,
+            "name": "The Dark Knight",
+            "image": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
+            "duration": "2h 32min",
+            "category": ["Action","Crime","Drama"],
+            "rating": "9.0"
+        },
+        {
+            "index": 1,
+            "name": "Joker",
+            "image": "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL__QL50.jpg",
+            "duration": "2h 2min",
+            "category": ["Darama","Crime","Thriller"],
+            "rating": "8.9"
+        }
+    ]
+}
