@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:movieapp/pages/home.dart';
-import 'package:movieapp/style/apptheme.dart';
-import 'package:movieapp/size_config.dart';
+import 'package:movieapp/screens/home.dart';
+import 'package:movieapp/utility/apptheme.dart';
+import 'package:movieapp/utility/size_config.dart';
 import 'package:flutter/services.dart';
 
 void main() {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
-    .then((_) {
-      runApp(new MyApp());
-    });
+      .then((_) {
+    runApp(new MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
@@ -20,18 +20,20 @@ class MyApp extends StatelessWidget {
           builder: (context, orientation) {
             SizeConfig().init(constraints, orientation);
             return MaterialApp(
+              
               title: 'M 4 U',
               theme: ThemeData(
+               
                 brightness: Brightness.dark,
                 primarySwatch: Colors.red,
                 textTheme: TextTheme(
                   headline: TextStyle(
-                      fontSize: 3.5 * SizeConfig.textmultiplier,
+                      fontSize: 3.8 * SizeConfig.textmultiplier,
                       fontWeight: FontWeight.w500,
-                      color: AppTheme.primarytext),
+                      ),
                   title: TextStyle(
-                      fontSize: 2.5 * SizeConfig.textmultiplier,
-                      color: AppTheme.primarytext,
+                      fontSize: 3.1 * SizeConfig.textmultiplier,
+                      color: AppTheme.primarytext.withOpacity(.8),
                       fontWeight: FontWeight.w400),
                   subtitle: TextStyle(
                       fontSize: 2.2 * SizeConfig.textmultiplier,

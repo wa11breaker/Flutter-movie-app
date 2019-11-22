@@ -1,10 +1,7 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:movieapp/pages/movies.dart';
-import 'package:movieapp/size_config.dart';
-import 'package:movieapp/style/apptheme.dart';
-
+import 'package:movieapp/model/movies.dart';
+import 'package:movieapp/utility/size_config.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DownloadPage extends StatelessWidget {
@@ -15,9 +12,9 @@ class DownloadPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppTheme.background,
+      backgroundColor: Colors.black,
       body: SafeArea(
-        top: false,
+        ///top: false,
         child: new ColumnDetails(
           movie: movie,
         ),
@@ -33,6 +30,7 @@ class ColumnDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double border=8;
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,18 +40,15 @@ class ColumnDetails extends StatelessWidget {
             Stack(
               children: <Widget>[
                 Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage("${movie.image}"),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
                   width: double.infinity,
                   height: MediaQuery.of(context).size.height / 1.5,
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                    child: Container(
-                      color: Colors.black.withOpacity(.3),
+                  decoration: BoxDecoration(
+                    color: Colors.teal,
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(border),
+                      bottomRight: Radius.circular(border),
+                      topLeft: Radius.circular(border),
+                      topRight: Radius.circular(border),
                     ),
                   ),
                 ),
@@ -67,7 +62,7 @@ class ColumnDetails extends StatelessWidget {
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius:
-                              BorderRadius.all((const Radius.circular(15))),
+                              BorderRadius.all((const Radius.circular(10))),
                           image: DecorationImage(
                             image: NetworkImage("${movie.image}"),
                             fit: BoxFit.cover,
@@ -79,9 +74,8 @@ class ColumnDetails extends StatelessWidget {
                     ),
                   ),
                 ),
-                SafeArea(
-                    child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10, left: 10),
                   child: InkWell(
                       onTap: () {
                         Navigator.pop(
@@ -94,11 +88,11 @@ class ColumnDetails extends StatelessWidget {
                         (Icons.arrow_back),
                         size: 4 * SizeConfig.textmultiplier,
                       )),
-                ))
+                )
               ],
             ),
 
-            // Movie Til
+            // Movie Tile
             Positioned(
               bottom: 10,
               left: 20,
@@ -117,7 +111,7 @@ class ColumnDetails extends StatelessWidget {
             children: <Widget>[
               SizedBox(height: SizeConfig.heightMultiplier * 2),
               Text(
-                movie.category,
+                'Category : ${movie.category}',
                 style: Theme.of(context).textTheme.body1,
               ),
               SizedBox(height: SizeConfig.heightMultiplier * 2),
@@ -134,8 +128,7 @@ class ColumnDetails extends StatelessWidget {
               Row(
                 children: <Widget>[
                   OutlineButton(
-                      borderSide:
-                          BorderSide(color: Colors.redAccent.withOpacity(.75)),
+                      borderSide: BorderSide(color: Colors.teal),
                       shape: RoundedRectangleBorder(
                         borderRadius: new BorderRadius.circular(7),
                       ),
@@ -151,10 +144,9 @@ class ColumnDetails extends StatelessWidget {
                           style: Theme.of(context).textTheme.body1,
                         ),
                       )),
-                  SizedBox(width: SizeConfig.imageSizeMultiplier * 3),
+                  SizedBox(width: SizeConfig.imageSizeMultiplier * 4),
                   OutlineButton(
-                      borderSide:
-                          BorderSide(color: Colors.redAccent.withOpacity(0.75)),
+                      borderSide: BorderSide(color: Colors.teal),
                       shape: RoundedRectangleBorder(
                         borderRadius: new BorderRadius.circular(7),
                       ),

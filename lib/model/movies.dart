@@ -20,7 +20,6 @@ class Movies {
   );
 
   Movies.fromJson(Map<String, dynamic> json) {
-    //varible name    json name
     index = json["index"].toString();
     category = json['category'];
     name = json['name'];
