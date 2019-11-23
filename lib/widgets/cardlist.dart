@@ -4,8 +4,8 @@ import 'package:movieapp/screens/downloadpage.dart';
 import 'package:movieapp/utility/size_config.dart';
 
 class ListCards extends StatelessWidget {
-  final Movies movies;
-  const ListCards({Key key, this.movies}) : super(key: key);
+final Movies movies;
+const ListCards({Key key, this.movies}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +24,8 @@ class ListCards extends StatelessWidget {
           width: double.infinity,
           height: 20 * SizeConfig.heightMultiplier,
           child: Row(
-            
             children: <Widget>[
-               image(),
+              image(),
               details(context),
             ],
           ),
@@ -37,8 +36,6 @@ class ListCards extends StatelessWidget {
     return Container(
       width: 60 * SizeConfig.imageSizeMultiplier,
       height: 17.5 * SizeConfig.heightMultiplier,
-     
-     
       decoration: BoxDecoration(
           color: Colors.white.withOpacity(.05),
           borderRadius: BorderRadius.only(
@@ -85,9 +82,7 @@ class ListCards extends StatelessWidget {
             color: Colors.white10,
             borderRadius: BorderRadius.circular(4),
             image: DecorationImage(
-              image: NetworkImage('${movies.image}'),
-              fit: BoxFit.cover
-            ),
+                image: NetworkImage('${movies.image}'), fit: BoxFit.cover),
           ),
         ));
   }

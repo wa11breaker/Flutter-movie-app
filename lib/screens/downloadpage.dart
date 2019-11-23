@@ -30,7 +30,6 @@ class ColumnDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double border=8;
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,12 +42,17 @@ class ColumnDetails extends StatelessWidget {
                   width: double.infinity,
                   height: MediaQuery.of(context).size.height / 1.5,
                   decoration: BoxDecoration(
-                    color: Colors.teal,
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(border),
-                      bottomRight: Radius.circular(border),
-                      topLeft: Radius.circular(border),
-                      topRight: Radius.circular(border),
+                    image: DecorationImage(
+                      image: NetworkImage("${movie.image}"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.black26,
+                      ),
                     ),
                   ),
                 ),
